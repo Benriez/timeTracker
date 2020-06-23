@@ -1,46 +1,25 @@
 import React from 'react';
-import { useStopwatch } from 'react-timer-hook';
+//import { useStopwatch } from 'react-timer-hook';
+//import {IconButton, TextField} from "@material-ui/core";
+//import Typography from "@material-ui/core/Typography"
+import Clock from "./components/Clock";
+import MyStopwatch from "./components/Timer"
+import {IconButton} from "@material-ui/core";
+import ListWithUpdateItem from "./components/TimeList"
 
-function MyStopwatch() {
-  const {
-    seconds,
-    minutes,
-    hours,
-    days,
-    isRunning,
-    start,
-    pause,
-    reset,
-  } = useStopwatch({ autoStart: false });
-
-
-  return (
-    <div style={{textAlign: 'center'}}>
-      <div style={{fontSize: '100px'}}>
-        <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
+class App extends React.Component {
+  render (){
+    return (
+      <div>
+        <Clock />
+        <h1 style={{textAlign: 'center'}}>Timetracker</h1>
+        <MyStopwatch />
+        <ListWithUpdateItem />
+        <IconButton onClick={""} >Create New</IconButton>
+        
       </div>
-      <p>{isRunning ? 'Running' : 'Not running'}</p>
-      <button onClick={start}>Start</button>
-      <button onClick={pause}>Pause</button>
-      <button onClick={reset}>Reset</button>
-      <form>
-        <label>
-          Task
-          <input style={{margin: '0 10px'}} type="text" name="task" />
-        </label>
-        <input type="submit" value="Add" />
-      </form>
-    </div>
-  );
+    );
+  }
 }
 
-export default function App() {
-
-  return (
-    <div>
-      <h1 style={{textAlign: 'center'}}>React Timetracker</h1>
-      <MyStopwatch />
-      <MyStopwatch />
-    </div>
-  );
-}
+export default App;
