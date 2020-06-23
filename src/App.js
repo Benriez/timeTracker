@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <div>
         <Clock />
-        <h1 style={{textAlign: 'center'}}>React Timetracker</h1>
+        <h1 style={{textAlign: 'center'}}>Timetracker</h1>
         <MyStopwatch />
         <ListWithUpdateItem />
         <IconButton onClick={""} >Create New</IconButton>
