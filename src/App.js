@@ -5,7 +5,13 @@ class App extends React.Component {
   
   render () {
     return (
-      <div className="container">Helloworld</div>
+      <div className="container">
+        <h1>Time-Tracker-App</h1>
+        <p>actual time</p>
+        <button>Start</button>
+        <p>time tracked</p>
+      </div>
+      
     )
   }
 
