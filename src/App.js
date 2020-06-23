@@ -16,7 +16,6 @@ function MyStopwatch() {
 
   return (
     <div style={{textAlign: 'center'}}>
-      <h1>React Timetracker</h1>
       <div style={{fontSize: '100px'}}>
         <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
       </div>
@@ -24,14 +23,14 @@ function MyStopwatch() {
       <button onClick={start}>Start</button>
       <button onClick={pause}>Pause</button>
       <button onClick={reset}>Reset</button>
-        <form>
-          <label>
-            Task:
-            <input type="text" name="task" />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
+      <form>
+        <label>
+          Task
+          <input style={{margin: '0 10px'}} type="text" name="task" />
+        </label>
+        <input type="submit" value="Add" />
+      </form>
+    </div>
   );
 }
 
@@ -39,6 +38,8 @@ export default function App() {
 
   return (
     <div>
+      <h1 style={{textAlign: 'center'}}>React Timetracker</h1>
+      <MyStopwatch />
       <MyStopwatch />
     </div>
   );
