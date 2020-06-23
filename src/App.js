@@ -1,6 +1,8 @@
 import React from 'react';
 import { useStopwatch } from 'react-timer-hook';
 import {IconButton, TextField} from "@material-ui/core";
+import Typography from "@material-ui/core/Typography"
+import Clock from "./components/Clock";
 
 function MyStopwatch() {
   const {
@@ -20,7 +22,7 @@ function MyStopwatch() {
       <div style={{fontSize: '100px'}}>
         <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
       </div>
-      <p>{isRunning ? 'Running' : 'Not running'}</p>
+      <Typography>{isRunning ? 'Running' : 'Not running'}</Typography>
       <button onClick={start}>Start</button>
       <button onClick={pause}>Pause</button>
       <button onClick={reset}>Reset</button>
@@ -29,7 +31,7 @@ function MyStopwatch() {
           Task
           <TextField style={{margin: '0 10px'}} type="text" name="task" />
         </label>
-        <input type="submit" value="Add" />
+        <button onClick={reset}>Add</button>
       </form>
       <IconButton onClick={start}>Create New</IconButton>
     </div>
@@ -40,9 +42,11 @@ export default function App() {
 
   return (
     <div>
+      <Clock />
       <h1 style={{textAlign: 'center'}}>React Timetracker</h1>
       <MyStopwatch />
-      <MyStopwatch />
+
+
     </div>
   );
 }
