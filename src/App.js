@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStopwatch } from 'react-timer-hook';
+import {IconButton, TextField} from "@material-ui/core";
 
 function MyStopwatch() {
   const {
@@ -26,10 +27,11 @@ function MyStopwatch() {
       <form>
         <label>
           Task
-          <input style={{margin: '0 10px'}} type="text" name="task" />
+          <TextField style={{margin: '0 10px'}} type="text" name="task" />
         </label>
         <input type="submit" value="Add" />
       </form>
+      <IconButton onClick={start}>Create New</IconButton>
     </div>
   );
 }
