@@ -1,5 +1,5 @@
 Side notes:
-- aprox 8 hours
+- aprox. 8 hours
 - everything needs to be improved
  
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
