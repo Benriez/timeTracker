@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useStopwatch } from 'react-timer-hook';
 
-function App() {
+function MyStopwatch() {
+  const {
+    seconds,
+    minutes,
+    hours,
+    days,
+    isRunning,
+    start,
+    pause,
+    reset,
+  } = useStopwatch({ autoStart: false });
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{textAlign: 'center'}}>
+      <div style={{fontSize: '100px'}}>
+        <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
+      </div>
+      <p>{isRunning ? 'Running' : 'Not running'}</p>
+      <button onClick={start}>Start</button>
+      <button onClick={pause}>Pause</button>
+      <button onClick={reset}>Reset</button>
+      <form>
+        <label>
+          Task
+          <input style={{margin: '0 10px'}} type="text" name="task" />
+        </label>
+        <input type="submit" value="Add" />
+      </form>
     </div>
   );
 }
 
-export default App;
+export default function App() {
+
+  return (
+    <div>
+      <h1 style={{textAlign: 'center'}}>React Timetracker</h1>
+      <MyStopwatch />
+      <MyStopwatch />
+    </div>
+  );
+}
