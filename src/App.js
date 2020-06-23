@@ -1,15 +1,22 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
+import { Stopwatch } from './components/Stopwatch';
 
 class App extends React.Component {
   
-  render () {
+  render() {
     return (
-      <div className="container">Helloworld</div>
-    )
+      <div className="App">
+        <div className="App-header">
+        </div>
+        <Stopwatch />
+      </div>
+    );
   }
-
 }
+
+
+
 
 
 export default App;
