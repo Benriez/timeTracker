@@ -11,12 +11,12 @@ function MyStopwatch() {
     start,
     pause,
     reset,
-  } = useStopwatch({ autoStart: true });
+  } = useStopwatch({ autoStart: false });
 
 
   return (
     <div style={{textAlign: 'center'}}>
-      <h1>React Stopwatch</h1>
+      <h1>React Timetracker</h1>
       <div style={{fontSize: '100px'}}>
         <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
       </div>
@@ -24,11 +24,19 @@ function MyStopwatch() {
       <button onClick={start}>Start</button>
       <button onClick={pause}>Pause</button>
       <button onClick={reset}>Reset</button>
-    </div>
+        <form>
+          <label>
+            Task:
+            <input type="text" name="task" />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
   );
 }
 
 export default function App() {
+
   return (
     <div>
       <MyStopwatch />
